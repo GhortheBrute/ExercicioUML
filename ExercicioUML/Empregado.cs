@@ -18,9 +18,15 @@ namespace ExercicioUML
         public double SalarioMensal {  get; private set; }
         private double salarioMinimo = 1320.0D;
         //private double SalarioMinimo 
-    
 
 
+        /// <summary>
+        /// Método construtor com dados básicos
+        /// </summary>
+        /// <param name="nome">Nome do Empregado</param>
+        /// <param name="sobrenome">Sobrenome do Empregado</param>
+        /// <param name="idade">Idade do Empregado</param>
+        /// <param name="dataNascimento">Data Nascimento do Empregado</param>
         public Empregado(string nome, string sobrenome, int idade, DateTime dataNascimento)
         {
             this.Nome = nome;
@@ -31,6 +37,15 @@ namespace ExercicioUML
             this.DataContracacao = DateTime.Now;
             this.SalarioMensal = salarioMinimo;
         }
+        /// <summary>
+        /// Método construtor completo
+        /// </summary>
+        /// <param name="nome">Nome do Empregado</param>
+        /// <param name="sobrenome">Sobrenome do Empregado</param>
+        /// <param name="idade">Idade do Empregado</param>
+        /// <param name="dataNascimento">Data Nascimento do Empregado</param>
+        /// <param name="dataContratacao">Data da contratação</param>
+        /// <param name="salarioMensal">Salario Mensal</param>
         public Empregado(string nome, string sobrenome, int idade, DateTime dataNascimento, DateTime dataContratacao, double salarioMensal)
         {
             this.Nome = nome;
@@ -50,12 +65,21 @@ namespace ExercicioUML
         //    this.DataContracacao = dataContratacao;
         //    this.SalarioMensal = VerificarSalarioMinimo(salariomensal);
         //}
+
+        /// <summary>
+        /// Método para Aumentar Salario
+        /// </summary>
+        /// <param name="empregado">Objeto Empregado</param>
         public static void AumentarSalario(Empregado empregado)
         {
             empregado.SalarioMensal = empregado.SalarioMensal + (empregado.SalarioMensal * 10 / 100);
         }
 
-
+        /// <summary>
+        /// Método para verificar se o salário Mensal é menor que o mínimo
+        /// </summary>
+        /// <param name="salariomensal"></param>
+        /// <returns></returns>
         public double VerificarSalarioMinimo(double salariomensal)
         {
             if (salariomensal < salarioMinimo) return salarioMinimo;
